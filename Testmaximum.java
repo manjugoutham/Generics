@@ -27,11 +27,21 @@ public class Testmaximum {
 			System.out.println(" Third largest float value is" + Z);
 	}
 
+	public void findstring(String X, String Y, String Z) 
+	{
+		if (X.compareTo(Y) >= 0 && X.compareTo(Z) >= 0) {
+			System.out.println(" First String is: " + X);
+		} else if (Y.compareTo(X) >= 0 && Y.compareTo(Z) >= 0) 
+		{
+			System.out.println(" Second String is:" + Y);
+		} else
+			System.out.println(" Third String is" + Z);
+	}
+
 	
 	public static void main(String[] args) {
 		Testmaximum test = new Testmaximum();
-		test.findInteger(5, 10, 15);
-                test.findfloat(10.2f, 20.2f, 30.2f);
+		test.findstring("apple", "peach", "banana");
 
 	}
 
