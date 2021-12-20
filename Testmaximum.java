@@ -2,15 +2,31 @@ package testmaximum;
 
 import java.util.Scanner;
 
-public class Testmaximum {
+public class Testmaximum <T extends Comparable<T>> {
+    T X;
+    T Y;
+    T Z;
 	static Scanner scan = new Scanner(System.in);
+	
+
+	public Testmaximum(T X,T Y,T Z) {
+        this.X = X;
+        this.Y = Y;
+        this.Z = Z;
+    }
+	
+	public T max() {
+		
+    	return Testmaximum.maxmethd(X, Y, Z);
+    }
 
 	public void findInteger(Integer X, Integer Y, Integer Z)
 	{
 		
 		if (X.compareTo(Y) >= 0 && X.compareTo(Z) >= 0) {
 			System.out.println(" First largest value is: " + X);
-		} else if (Y.compareTo(X) >= 0 && Y.compareTo(Z) >= 0) {
+		} else if (Y.compareTo(X) >= 0 && Y.compareTo(Z) >= 0) 
+		{
 			System.out.println(" Second largest value is:" + Y);
 		} else
 			System.out.println(" Third is largest" + Z);
@@ -38,6 +54,7 @@ public class Testmaximum {
 			System.out.println(" Third String is" + Z);
 	}
 
+	
 	public <T extends Comparable<T>> void extendmax(T X, T Y, T Z)
 	{
         if(X.compareTo(Y) >= 0 && X.compareTo(Z) >= 0) {
@@ -51,10 +68,31 @@ public class Testmaximum {
 
     }
 
-	
+
+	    public static <T extends Comparable<T>> T maxmethd(T X, T Y, T Z) {
+	        if(X.compareTo(Y) >= 0 && X.compareTo(Z) >= 0) {
+	            System.out.println(" First is largest: " +X);
+	        }
+	        else if(Y.compareTo(X) >= 0 && Y.compareTo(Z) >= 0) {
+	            System.out.println(" Second is largest : " +Y);
+	        }
+	        else {
+	        	System.out.println(" Third is largest : " +Z);
+	        }
+	            
+			return Z;
+	    }
+
+	    
 	public static void main(String[] args) {
-		Testmaximum test = new Testmaximum();
-		test.extendmax("apple", "Peach", "banana");
+		 new Testmaximum(2,8,7).max();
+//		test.findInteger(5, 10, 15);
+//		test.findfloat(10.2f, 20.2f, 30.2f);
+//		test.findstring("apple", "peach", "banana");
+//
+		//test.extendmax("apple", "Peach", "banana");
+		//test.maxmethd(5, 10, 15);
+	
 
 	}
 
