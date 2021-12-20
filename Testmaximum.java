@@ -38,10 +38,23 @@ public class Testmaximum {
 			System.out.println(" Third String is" + Z);
 	}
 
+	public <T extends Comparable<T>> void extendmax(T X, T Y, T Z)
+	{
+        if(X.compareTo(Y) >= 0 && X.compareTo(Z) >= 0) {
+            System.out.println(" First is largest "+X);
+        }
+        else if(Y.compareTo(X) >= 0 && Y.compareTo(Z) >= 0) {
+            System.out.println(" Second is largest"+Y);
+        }
+        else
+            System.out.println(" Third is largest"+Z);
+
+    }
+
 	
 	public static void main(String[] args) {
 		Testmaximum test = new Testmaximum();
-		test.findstring("apple", "peach", "banana");
+		test.extendmax("apple", "Peach", "banana");
 
 	}
 
